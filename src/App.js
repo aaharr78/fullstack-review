@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { getUser } from './redux/reducers/user'
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
@@ -28,12 +28,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <HashRouter>
-          <Switch>
-            <Route path="/" component={LandingPage} exact />
-            <Route path="/posts" component={PostsContainer} />
-          </Switch>
+          <div>
+            <Header />
+            <Switch>
+              <Route path="/" component={LandingPage} exact />
+              <Route path="/posts" component={PostsContainer} />
+            </Switch>
+          </div>
         </HashRouter>
         {/* <button onClick={this.login}>login</button> */}
       </div>

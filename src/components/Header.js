@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { Link } from 'react-router-dom'
 
 function Header(props) {
     return (
         <div style={styles.header}>
             <div id="logo" style={styles.logo}>
-                <h1>WSL1 ROCKS!</h1>
+               <Link to='/'><h1>WSL1 ROCKS!</h1></Link>
             </div>
             <div id="navbar" style={styles.navbar}>
-                <a href="">posts</a>
+                <Link to ={'/posts'}>posts</Link>
                 {props.user ? <a href="">logout</a> : <a href="">login</a>}
             </div>
         </div>

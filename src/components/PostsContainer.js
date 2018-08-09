@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom'
 
-import {getPosts} from '../redux/reducers/posts'
+import { getPosts } from '../redux/reducers/posts'
+
+import Posts from './Posts'
 
 class PostsContainer extends Component {
-    componentDidMount(){
-        this.props.getPosts()
-    }
+  componentDidMount() {
+    this.props.getPosts()
+  }
 
-    render(){
-        return(
-            <div>posts container</div>
-        )
-    }
+  render() {
+    return (
+      <Switch>
+        <Route path="/posts" component={Posts} exact />
+      </Switch>
+    )
+  }
 }
 
-export default connect(null, {getPosts})(PostsContainer)
+export default connect(null, { getPosts })(PostsContainer)
